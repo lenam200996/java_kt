@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="text-align: center;">
-	<h1 style="color:GREEN;">WELCOME TO MY WEBSITE</h1><hr>
+<body>
 	<%
 		User u = new User();
 		u = (User) request.getSession().getAttribute("user");

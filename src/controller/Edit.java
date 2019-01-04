@@ -38,21 +38,26 @@ public class Edit extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		String fullname = request.getParameter("fullname");
-		HttpSession ss = request.getSession();
 
 		User u = new User();
+		UserBO ubo = new UserBO();
+		HttpSession ss = request.getSession();
+
 		u = (User) ss.getAttribute("user");
 		String id = u.getId();
-
-		UserBO ubo = new UserBO();
+		
 
 		if (ubo.edit(id, fullname)) {
+			
 			u.setFullname(fullname);
 			ss.setAttribute("user", u);
 			request.getRequestDispatcher("main.jsp").include(request, response);
+			
 		} else {
+			
 			out.println("EDIT FAILT!!");
 			request.getRequestDispatcher("edit.jsp").include(request, response);
+			
 		}
 	}
 

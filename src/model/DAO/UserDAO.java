@@ -9,7 +9,7 @@ import java.sql.Statement;
 import model.bean.User;
 
 public class UserDAO {
-	private String url = "jdbc:sqlserver://localhost:1433;databaseName=Data076";
+	private String url = "jdbc:sqlserver://localhost:1433;databaseName=Data076"; // thay Data076 bằng tên database
 	Connection c;
 	User u = new User();
 
@@ -32,15 +32,15 @@ public class UserDAO {
 			st = c.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.next()) {
+				//------------------
 				u.setId(rs.getString("UserID"));
 				u.setUsername(rs.getString("username"));
 				u.setPassword(rs.getString("password"));
 				u.setFullname(rs.getString("fullname"));
+				//-----------------
 				return true;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			return false;
 		}
 		return false;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import model.bean.Book;
 
 public class BookDAO {
-	private String url = "jdbc:sqlserver://localhost:1433;databaseName=Data076";
+	private String url = "jdbc:sqlserver://localhost:1433;databaseName=Data076"; // thay Data076 bằng tên database
 	Connection c;
 	ArrayList<Book> arr = new ArrayList<>();
 
@@ -32,13 +32,14 @@ public class BookDAO {
 			Statement st = c.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			while (rs.next()) {
+				//-------------------------------
 				Book b = new Book();
 				b.setId(id);
 				b.setTensach(rs.getString("tensach"));
 				b.setNhaxb(rs.getString("nhaxb"));
 				b.setNamsx(rs.getString("namsx"));
 				b.setSoluong(rs.getInt("soluong"));
-
+//--------------------------------------------
 				arr.add(b);
 			}
 			return arr;

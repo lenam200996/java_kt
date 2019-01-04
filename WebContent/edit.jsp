@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="text-align: center;">
-	<h1 style="color:GREEN;">EDIT PROFILE</h1><hr>
+<body>
 	<form action="Edit">
 		<%
 			User u = new User();
@@ -20,7 +19,7 @@
 		%>
 		<h3>EDIT PROFILE</h3>
 		<h4>Username:<%=u.getUsername().trim()%></h4>
-		<input type="text" value="<%=u.getFullname().trim()%>"name="fullname">
+		<input type="text" value="<%= u.getFullname().trim() %>"name="fullname">
 		<input type="submit" value="Edit">
 	</form>
 	<%

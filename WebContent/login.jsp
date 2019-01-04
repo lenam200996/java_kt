@@ -6,13 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="text-align: center;">
-	<h1 style="color:GREEN;">LOGIN TO MY WEBSITE</h1><hr>
+<body>
 	<form action="Login" method="post">
 		<table>
 			<tr>
 				<td>Username</td>
-				<td><input name="us" value="nam"></td>
+				<td><input name="us" value="admin"></td>
 			</tr>
 			<tr>
 				<td>Password</td>

@@ -37,16 +37,21 @@ public class View extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		PrintWriter out = response.getWriter();
 		User u = new User();
 		BookBO b = new BookBO();
 		HttpSession ss = request.getSession();
 
 		u = (User) ss.getAttribute("user");
+		
 		if (u == null) {
+			
 			out.print("Login first!!");
 			request.getRequestDispatcher("login.jsp");
+			
 		} else {
+			
 			ArrayList<Book> arr = new ArrayList<>();
 
 			arr = b.getArr(u.getId());

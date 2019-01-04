@@ -9,9 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="text-align: center;">
-	<h1 style="color: GREEN;">VIEW BOOK</h1>
-	<hr>
+<body>
 	<table border="1" cellpadding="15" cellspacing="0" >
 		<tr>
 			<th>ten sach</th>
@@ -30,7 +28,7 @@
 				ArrayList<Book> arr = new ArrayList<>();
 				arr = (ArrayList<Book>) request.getSession().getAttribute("arr");
 
-				for (Book b : arr) {
+				for (Book b : arr) { // đầu for
 		%>
 		<tr>
 			<td><%=b.getTensach()%></td>
@@ -40,9 +38,9 @@
 		</tr>
 
 		<%
-			}
+			} // của for
 
-			}
+			} // của else
 		%>
 	</table>
 	<a href="main.jsp">GO TO HOME</a>

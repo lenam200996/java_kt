@@ -39,7 +39,6 @@ public class Login extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		UserBO u = new UserBO();
-
 		HttpSession ss = request.getSession();
 
 		if (u.check(us, pw)) {
